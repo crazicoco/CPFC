@@ -1,0 +1,239 @@
+Parameters:
+root    :    /share/home/crazicoco/competition/CPFC
+vocabIdName    :    vocab.txt
+tokenizeModel    :    hfl/chinese-roberta-wwm-ext-large
+pretrainModel    :    hfl/chinese-roberta-wwm-ext-large
+saveModelAddress    :    saveModelBin/
+processedDataDir    :    preprocessed_data
+saveLabelIdName    :    label.pt
+saveTrainIdName    :    train.pt
+saveValidIdName    :    valid.pt
+saveTestIdName    :    test.pt
+batch_size    :    10
+epoch_size    :    20
+loss_calculate    :    cross-entroy
+lr    :    2e-05
+device    :    0
+max_len    :    512
+lossCalculateWay    :    general
+accumulate    :    True
+ifparallel    :    True
+debug    :    False
+logfileName    :    public
+a_step    :    16
+description    :    add the new processed data and use a*loss and l2 regularization
+use_bert_layer    :    -1
+record_addr    :    /share/home/crazicoco/competition/CPFC/record_analysis/2021_1_5_15_21
+*********************************************train model**************************************
+current epoch:0
+[ 1000 - th batch: train loss is 6.727922 valid total precise is 0.348448 ]
+[ 2000 - th batch: train loss is 4.779216 valid total precise is 0.432316 ]
+[ 3000 - th batch: train loss is 3.906151 valid total precise is 0.472257 ]
+[ 4000 - th batch: train loss is 3.377951 valid total precise is 0.500725 ]
+[ 5000 - th batch: train loss is 3.008133 valid total precise is 0.523845 ]
+[ 6000 - th batch: train loss is 2.737923 valid total precise is 0.541157 ]
+[ 7000 - th batch: train loss is 2.524797 valid total precise is 0.555608 ]
+[ 8000 - th batch: train loss is 2.354497 valid total precise is 0.567733 ]
+[ 9000 - th batch: train loss is 2.214245 valid total precise is 0.577397 ]
+[ 10000 - th batch: train loss is 2.097061 valid total precise is 0.585189 ]
+[ 11000 - th batch: train loss is 1.997403 valid total precise is 0.592408 ]
+[ 12000 - th batch: train loss is 1.909869 valid total precise is 0.599017 ]
+[ 13000 - th batch: train loss is 1.834135 valid total precise is 0.604516 ]
+[ 14000 - th batch: train loss is 1.767859 valid total precise is 0.609236 ]
+[ 15000 - th batch: train loss is 1.708969 valid total precise is 0.613188 ]
+[ 16000 - th batch: train loss is 1.655372 valid total precise is 0.617089 ]
+[ 17000 - th batch: train loss is 1.607313 valid total precise is 0.620660 ]
+[ 18000 - th batch: train loss is 1.562992 valid total precise is 0.624018 ]
+The epoch:0,marcoF1ScoresOcemotion:0.530627
+********************************confusion_matrix********************************
+[[1645  509    9  305  127 1252  444]
+ [ 657 1937   10  430  152 1166  412]
+ [  35   53  174   39   37  215   46]
+ [ 357  367    8 5840  807 1092  510]
+ [ 119  140    8  964 2214  858  227]
+ [ 916  652   30  733  533 7182  558]
+ [ 383  233    2  341  149  632 3756]]
+*****************************classification_report******************************
+              precision    recall  f1-score   support
+
+           0       0.40      0.38      0.39      4291
+           1       0.50      0.41      0.45      4764
+           2       0.72      0.29      0.41       599
+           3       0.67      0.65      0.66      8981
+           4       0.55      0.49      0.52      4530
+           5       0.58      0.68      0.62     10604
+           6       0.63      0.68      0.66      5496
+
+    accuracy                           0.58     39265
+   macro avg       0.58      0.51      0.53     39265
+weighted avg       0.58      0.58      0.58     39265
+
+The epoch:0,marcoF1ScoresOcnli:0.669795
+********************************confusion_matrix********************************
+[[11570  4519  1637]
+ [ 3929 14653  2903]
+ [ 1875  3897 11604]]
+*****************************classification_report******************************
+              precision    recall  f1-score   support
+
+           0       0.67      0.65      0.66     17726
+           1       0.64      0.68      0.66     21485
+           2       0.72      0.67      0.69     17376
+
+    accuracy                           0.67     56587
+   macro avg       0.67      0.67      0.67     56587
+weighted avg       0.67      0.67      0.67     56587
+
+The epoch:0,marcoF1ScoresTnews:0.600481
+********************************confusion_matrix********************************
+[[1161  173  215   10   32   14   25   63   28   30   31   98    0  136
+    25]
+ [ 103 5030  527   43  100   12   34  389  206  165  674  248    3  291
+    53]
+ [ 300  584 5763  248  103   16   55  211  286  210  145  298    1  122
+   276]
+ [  22  116  441 2941   86    6   83  113   95   89  106  147    0   40
+   252]
+ [  23  106   83   61 5910  220  135  238 1682  108  191  434  117  537
+    39]
+ [  29   51   31   16  362 1238   45   75   95   23  196   45    1  155
+     4]
+ [  41   80  159   54  224   33 2723   88  549  136  309  129    3   97
+    50]
+ [  82  404  219   87  203   51   37 4634  392  112  156  189    1  196
+    37]
+ [  12   84  158   45 1808   52  326  322 6806  247  120  264    6  147
+   272]
+ [  31  176  138   46   82    3   69  101  245 3706  114 1522    1   65
+   122]
+ [  47  553  145   29  159   77  150  125  187   99 3380  533    5  460
+    33]
+ [ 128  169  328  102  409   26   90  162  288 1119  407 5723    2  181
+    46]
+ [   0    1    0    2  263    4    1    0   18    2    0    1  126    1
+     1]
+ [ 144  211   73    8  445   75   45  169  141   62  341  153    1 3566
+    18]
+ [  19  100  412  186   53    4   53   72  417  190   42   54    1   44
+  2224]]
+*****************************classification_report******************************
+              precision    recall  f1-score   support
+
+           0       0.54      0.57      0.56      2041
+           1       0.64      0.64      0.64      7878
+           2       0.66      0.67      0.67      8618
+           3       0.76      0.65      0.70      4537
+           4       0.58      0.60      0.59      9884
+           5       0.68      0.52      0.59      2366
+           6       0.70      0.58      0.64      4675
+           7       0.69      0.68      0.68      6800
+           8       0.60      0.64      0.62     10669
+           9       0.59      0.58      0.58      6421
+          10       0.54      0.57      0.55      5982
+          11       0.58      0.62      0.60      9180
+          12       0.47      0.30      0.37       420
+          13       0.59      0.65      0.62      5452
+          14       0.64      0.57      0.61      3871
+
+    accuracy                           0.62     88794
+   macro avg       0.62      0.59      0.60     88794
+weighted avg       0.62      0.62      0.62     88794
+
+The epoch:0,marcoF1ScoresTotal:0.600301
+*********************************************start valid model**************************************
+The epoch:0,marcoF1ScoresOcemotion:0.642480
+********************************confusion_matrix********************************
+[[122  88   1  24   9  81   7]
+ [ 20 268   0  26  10  50   0]
+ [  0   8  17   3   5  13   0]
+ [  3  33   1 638  45  57   4]
+ [  1  17   1  68 215  47   4]
+ [ 35 129   3  80  63 716  10]
+ [  0   4   0   1   0   0  73]]
+*****************************classification_report******************************
+              precision    recall  f1-score   support
+
+           0       0.67      0.37      0.48       332
+           1       0.49      0.72      0.58       374
+           2       0.74      0.37      0.49        46
+           3       0.76      0.82      0.79       781
+           4       0.62      0.61      0.61       353
+           5       0.74      0.69      0.72      1036
+           6       0.74      0.94      0.83        78
+
+    accuracy                           0.68      3000
+   macro avg       0.68      0.64      0.64      3000
+weighted avg       0.69      0.68      0.68      3000
+
+The epoch:0 ,marcoF1ScoresOcnli:0.849581
+********************************confusion_matrix********************************
+[[862 114  35]
+ [ 68 837  96]
+ [ 30 110 848]]
+*****************************classification_report******************************
+              precision    recall  f1-score   support
+
+           0       0.90      0.85      0.87      1011
+           1       0.79      0.84      0.81      1001
+           2       0.87      0.86      0.86       988
+
+    accuracy                           0.85      3000
+   macro avg       0.85      0.85      0.85      3000
+weighted avg       0.85      0.85      0.85      3000
+
+The epoch:0,marcoF1ScoresTnews:0.558190
+********************************confusion_matrix********************************
+[[ 17   7   9   0   0   1   1   6   1   2   2   5   0   9   0]
+ [  3 126  29   0   5   2   0   8   2   7  19   9   0  14   1]
+ [  5  26 171   3   2   3   3  12  13   5  10  12   0   7   8]
+ [  1   9  19 154   2   1   6   5   5   1   1   5   0   1  11]
+ [  2   4   3   0 123  12   5   6  66   2   9   9   5  27   2]
+ [  1   3   0   2  14  69   1   4   7   1  12   1   0   4   0]
+ [  1   3   5   2  11   3 137   4  34   2  18   8   0   4   2]
+ [  2  22   7   6   4   2   0 110  22   4   5   4   0  10   2]
+ [  0   3   9   2  60   3   6  12 210   8   7   7   0   8  21]
+ [  1   6   5   4   3   0   2   4  11 120   4  49   0   4   7]
+ [  1  15  10   4   2   2   3   4   3   3 104  10   0  24   0]
+ [  3  12  12   2  15   3   3   8   8  58  29 123   0   9   1]
+ [  0   0   0   0   4   0   0   0   1   0   0   0   7   0   0]
+ [  1   7   2   0  10   4   1   4   6   0  10   1   0 103   0]
+ [  1   3  27   7   0   1   0   1  16   2   5   3   0   3 109]]
+*****************************classification_report******************************
+              precision    recall  f1-score   support
+
+           0       0.44      0.28      0.34        60
+           1       0.51      0.56      0.54       225
+           2       0.56      0.61      0.58       280
+           3       0.83      0.70      0.76       221
+           4       0.48      0.45      0.46       275
+           5       0.65      0.58      0.61       119
+           6       0.82      0.59      0.68       234
+           7       0.59      0.55      0.57       200
+           8       0.52      0.59      0.55       356
+           9       0.56      0.55      0.55       220
+          10       0.44      0.56      0.50       185
+          11       0.50      0.43      0.46       286
+          12       0.58      0.58      0.58        12
+          13       0.45      0.69      0.55       149
+          14       0.66      0.61      0.64       178
+
+    accuracy                           0.56      3000
+   macro avg       0.57      0.56      0.56      3000
+weighted avg       0.57      0.56      0.56      3000
+
+The epoch:0,marcoF1ScoresTotal:0.683417
+save the pretrainModel in /share/home/crazicoco/competition/CPFC/record_analysis/2021_1_5_15_21/save_model/roberta_best_dev_f1_0.6834170803041683.pt and the classifierModel in /share/home/crazicoco/competition/CPFC/record_analysis/2021_1_5_15_21/save_model/classifier_best_dev_f1_0.6834170803041683.pt
+best epoch is:0 with best f1 is: 0.683417
+*********************************************train model**************************************
+current epoch:1
+[ 1000 - th batch: train loss is 0.393530 valid total precise is 0.735335 ]
+[ 2000 - th batch: train loss is 0.372643 valid total precise is 0.737519 ]
+[ 3000 - th batch: train loss is 0.363931 valid total precise is 0.739046 ]
+[ 4000 - th batch: train loss is 0.357083 valid total precise is 0.741860 ]
+[ 5000 - th batch: train loss is 0.351903 valid total precise is 0.743009 ]
+[ 6000 - th batch: train loss is 0.347886 valid total precise is 0.743957 ]
+[ 7000 - th batch: train loss is 0.345432 valid total precise is 0.743906 ]
+[ 8000 - th batch: train loss is 0.342116 valid total precise is 0.745043 ]
+[ 9000 - th batch: train loss is 0.339969 valid total precise is 0.745816 ]
+[ 10000 - th batch: train loss is 0.337299 valid total precise is 0.746675 ]
+[ 11000 - th batch: train loss is 0.336862 valid total precise is 0.746186 ]

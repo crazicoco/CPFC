@@ -1,0 +1,44 @@
+How to use the BERT as the pretrained model
+1. https://blog.csdn.net/jliang3/article/details/89603608
+2. https://zhuanlan.zhihu.com/p/57474455
+3. https://blog.csdn.net/ganxiwu9686/article/details/85061759?utm_medium=distribute.pc_relevant.none-task-blog-OPENSEARCH-1.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-OPENSEARCH-1.control
+4. https://blog.csdn.net/weixin_43927437/article/details/85162533
+5. https://github.com/realcactus/bert
+
+主要参考资料是周晓松代码和博客，可以参考他的。
+目前存在下面几个问题？
+BERT如何微调？需要修改什么文件？
+WWM是什么？
+BERT和WWM有什么区别为什么，可以做联合？
+
+方法：阅读一遍bert源码吧，对比查看周晓松文章：“使用BERT预训练模型+微调进行文本分类”，然后查看对应修改。
+
+
+1.使用BERT做中文文本相似度计算与文本分类 :https://blog.csdn.net/u012526436/article/details/84637834
+2.博客1对应的github源码地址已经本地下载，在referenceSource/bert-utils路径:https://github.com/terrifyzhao/bert-utils
+https://www.jianshu.com/p/fbde57f91f0f   讲解三种方式实现获取句向量  讲解的关于Bert的句向量生成法
+3.tranformer源码解读,已经本地下载在referenceSource/transformer路径： https://blog.csdn.net/u012526436/article/details/86519381
+
+4.bert重新构成句向量可以采用获取倒数第二层的输出作为参数
+5.明天找一个tf视频学习一下方便调试tf的逻辑代码
+
+
+180G 中文ELECTRA预训练模型，同时提供了其他的中文预训练模型情况说明
+https://www.jiqizhixin.com/articles/2020-10-26-11
+
+所有预训练模型总结
+https://zhuanlan.zhihu.com/p/76912493
+
+
+NLP算法必备预训练总结
+https://zhuanlan.zhihu.com/p/115014536
+
+
+文本蕴含：
+0 代表 T能够推出H是真的
+2 代表 T能够推出H是假的
+1 代表 T不能推出H的真假
+
+基本给出了文本蕴含的相关问题解决方法
+https://www.jiqizhixin.com/articles/2016-12-06-2
+
